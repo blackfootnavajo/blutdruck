@@ -5,21 +5,12 @@ import {
 } from 'lucide-react';
 
 const App = () => {
-  // Hardcoded defaults for initial load (Year 2026 implied by current date context)
-  const defaultEntries = [
-    { id: 'def-1', sys: 139, dia: 90, puls: 89, date: '2026-02-02T11:59:00' },
-    { id: 'def-2', sys: 135, dia: 87, puls: 87, date: '2026-01-29T11:46:00' },
-    { id: 'def-3', sys: 120, dia: 85, puls: 106, date: '2026-01-16T12:53:00' },
-    { id: 'def-4', sys: 122, dia: 83, puls: 87, date: '2026-01-15T12:25:00' },
-    { id: 'def-5', sys: 138, dia: 88, puls: 85, date: '2026-01-08T11:53:00' },
-  ];
-
   const [entries, setEntries] = useState(() => {
     const saved = localStorage.getItem('bp_entries');
     if (saved) {
       return JSON.parse(saved);
     }
-    return defaultEntries;
+    return [];
   });
 
   const [loading, setLoading] = useState(false);
