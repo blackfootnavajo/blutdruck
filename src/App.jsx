@@ -370,30 +370,30 @@ const App = () => {
             <div className={`text-center py-10 font-light ${darkMode ? 'text-gray-600' : 'text-gray-300'}`}> Keine Einträge vorhanden </div>
           ) : (
             entries.map((entry) => (
-              <div key={entry.id} className={`group relative flex items-center justify-between p-4 rounded-xl transition-all print-item ${darkMode ? 'bg-white/5 hover:bg-white/10' : 'bg-white hover:bg-gray-50'} shadow-sm border border-transparent ${editId === entry.id ? (darkMode ? 'border-blue-500/50 bg-blue-500/5' : 'border-blue-200 bg-blue-50') : 'hover:border-gray-200/50'}`}>
-                <div className="flex items-center gap-4">
-                  <div className={`w-1.5 h-10 rounded-full ${getStatusColor(entry.sys, entry.dia)} opacity-80 no-print`}></div>
-                  <div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xl font-normal">{entry.sys}</span>
-                      <span className={`text-sm font-light ${darkMode ? 'text-gray-400' : 'text-gray-400'}`}>/</span>
-                      <span className="text-xl font-normal">{entry.dia}</span>
-                      <span className={`text-xs ml-1 font-light ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>mmHg</span>
+              <div key={entry.id} className={`group relative flex items-center justify-between p-3 sm:p-4 rounded-xl transition-all print-item ${darkMode ? 'bg-white/5 hover:bg-white/10' : 'bg-white hover:bg-gray-50'} shadow-sm border border-transparent ${editId === entry.id ? (darkMode ? 'border-blue-500/50 bg-blue-500/5' : 'border-blue-200 bg-blue-50') : 'hover:border-gray-200/50'}`}>
+                <div className="flex items-center gap-3 sm:gap-4 overflow-hidden">
+                  <div className={`w-1.5 h-10 rounded-full ${getStatusColor(entry.sys, entry.dia)} opacity-80 no-print flex-shrink-0`}></div>
+                  <div className="min-w-0">
+                    <div className="flex items-baseline gap-1 sm:gap-2 flex-wrap">
+                      <span className="text-xl font-normal leading-none">{entry.sys}</span>
+                      <span className={`text-sm font-light leading-none ${darkMode ? 'text-gray-400' : 'text-gray-400'}`}>/</span>
+                      <span className="text-xl font-normal leading-none">{entry.dia}</span>
+                      <span className={`text-xs ml-0.5 font-light ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>mmHg</span>
                     </div>
-                    <div className={`text-xs font-light mt-0.5 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{formatDate(entry.date)}</div>
+                    <div className={`text-xs font-light mt-1 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{formatDate(entry.date)}</div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <div className="flex flex-col items-end mr-2">
-                    <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-2 flex-shrink-0 ml-2">
+                  <div className="flex flex-col items-end">
+                    <div className="flex items-center gap-1">
                       <Heart size={12} className={`${darkMode ? 'text-gray-500' : 'text-gray-400'} no-print`} fill="currentColor" />
-                      <span className="text-lg font-light">{entry.puls}</span>
+                      <span className="text-lg font-light leading-none">{entry.puls}</span>
                     </div>
                     <span className={`text-[10px] font-light ${darkMode ? 'text-gray-500' : 'text-gray-400'}`}>BPM</span>
                   </div>
 
                   {/* Buttons */}
-                  <div className="flex items-center gap-1 opacity-40 group-hover:opacity-100 transition-opacity no-print">
+                  <div className="flex items-center gap-1 opacity-100 sm:opacity-40 sm:group-hover:opacity-100 transition-opacity no-print">
                     <button onClick={() => handleEdit(entry)} className={`p-2 rounded-lg ${darkMode ? 'hover:bg-blue-500/20 text-blue-400' : 'hover:bg-blue-50 text-blue-500'}`}>
                       <Pencil size={16} strokeWidth={1.5} />
                     </button>
