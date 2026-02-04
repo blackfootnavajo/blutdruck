@@ -394,10 +394,10 @@ const App = () => {
 
                   {/* Buttons */}
                   <div className="flex items-center gap-1 opacity-100 sm:opacity-40 sm:group-hover:opacity-100 transition-opacity no-print">
-                    <button onClick={() => handleEdit(entry)} className={`p-2 rounded-lg ${darkMode ? 'hover:bg-blue-500/20 text-blue-400' : 'hover:bg-blue-50 text-blue-500'}`}>
+                    <button onClick={() => handleEdit(entry)} className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700 text-gray-500 hover:text-gray-300' : 'hover:bg-gray-100 text-gray-400 hover:text-gray-600'}`}>
                       <Pencil size={16} strokeWidth={1.5} />
                     </button>
-                    <button onClick={() => requestDelete(entry.id)} className={`p-2 rounded-lg ${darkMode ? 'hover:bg-red-500/20 text-red-400' : 'hover:bg-red-50 text-red-500'}`}>
+                    <button onClick={() => requestDelete(entry.id)} className={`p-2 rounded-lg ${darkMode ? 'hover:bg-gray-700 text-gray-500 hover:text-gray-300' : 'hover:bg-gray-100 text-gray-400 hover:text-gray-600'}`}>
                       <Trash2 size={16} strokeWidth={1.5} />
                     </button>
                   </div>
